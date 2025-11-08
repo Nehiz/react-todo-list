@@ -6,7 +6,10 @@ import './App.css'
 export default function App() {
   
   const [todos, setTodos] = useState(() => {
-    const localvalue = localStorage.g)
+    const localvalue = localStorage.getItem("ITEMS")
+    if (localvalue == null) return []
+    return JSON.parse(localvalue)
+  })
 
   useEffect (() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
