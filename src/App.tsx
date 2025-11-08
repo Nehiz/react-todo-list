@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NewTodoForm } from './NewTodoForm'
 import { TodoList } from './TodoList'
 import './App.css'
 
 export default function App() {
   
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() => {
+    const localvalue = localStorage.g)
 
   useEffect (() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
